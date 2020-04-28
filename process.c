@@ -13,6 +13,8 @@
 
 //// executes a process and print start/finish time to dmesg command.
 int proc_exec(struct process proc) {
+	//// flush std buffer.
+	fflush(stdout);
 	int pid = fork();
 
 	if (pid < 0) {
